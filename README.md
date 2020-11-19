@@ -12,7 +12,7 @@ This will be our repository for doing code reviews. Remember, this is the curren
 These are the steps you should follow:
 - Clone the repo
 - `git checkout [your project's branch name]`: This should track the remote branch
-- `cp [project/files]`: Copy all files for review into your branch
+- `cp [project/files]`: Copy all files for review into your branch (including the `README.md` file, which you should rename to `[project_name]_README.md`)
 - `git add ...` |-> `git commit ...` |-> `git push`
 
 Reviewers, once you have been assigned to a pull request, please do the following while going through the pull request:
