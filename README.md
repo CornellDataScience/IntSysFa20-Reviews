@@ -9,6 +9,12 @@ This will be our repository for doing code reviews. Remember, this is the curren
     - If you think it will be cleaner to separate your code from your team members' code, create a folder per person on your team (eg: `magd` and `katie`) and dump your files in that folder.
 - Once you are done adding your files that you want to be reviewed, notify the leads (Cora and Samar) and the leads will assign reviewers to your pull request. 
 
+These are the steps you should follow:
+- Clone the repo
+- `git checkout [your project's branch name]`: This should track the remote branch
+- `cp [project/files]`: Copy all files for review into your branch
+- `git add ...` |-> `git commit ...` |-> `git push`
+
 Reviewers, once you have been assigned to a pull request, please do the following while going through the pull request:
 - Click on `files changed`. There you will find all the files added by the authors
 - Click on one of the files, which will open up the review window with the previous version on the left (which should be blank) and the file on the right. 
