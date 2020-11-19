@@ -1,0 +1,15 @@
+This is a placeholder file for me to test some code review magic. 
+
+1+1 = 3
+
+2 + 4 = 7
+
+The sun is a deadly laser.
+
+May the force be with you.
+
+How do you like dem apples...
+
+You have become the very thing you seek to destroy.
+
+Oh hi Mark
