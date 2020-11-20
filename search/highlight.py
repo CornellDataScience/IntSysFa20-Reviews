@@ -695,63 +695,6 @@ class HtmlFormatter(Formatter):
         self.seen = {}
 
 
-class GenshiFormatter(Formatter):
-    """Returns a Genshi event stream containing HTML formatting around the
-    matched terms.
-    """
-
-    def __init__(self, qname="strong", between="..."):
-        """
-        :param qname: the QName for the tag to wrap around matched terms.
-        :param between: the text to add between fragments.
-        """
-
-        self.qname = qname
-        self.between = between
-
-        from genshi.core import START, END, TEXT  # @UnresolvedImport
-        from genshi.core import Attrs, Stream  # @UnresolvedImport
-        self.START, self.END, self.TEXT = START, END, TEXT
-        self.Attrs, self.Stream = Attrs, Stream
-
-    def _add_text(self, text, output):
-        if output and output[-1][0] == self.TEXT:
-            output[-1] = (self.TEXT, output[-1][1] + text, output[-1][2])
-        else:
-            output.append((self.TEXT, text, (None, -1, -1)))
-
-    def format_token(self, text, token, replace=False):
-        qn = self.qname
-        txt = get_text(text, token, replace)
-        return self.Stream([(self.START, (qn, self.Attrs()), (None, -1, -1)),
-                            (self.TEXT, txt, (None, -1, -1)),
-                            (self.END, qn, (None, -1, -1))])
-
-    def format_fragment(self, fragment, replace=False):
-        output = []
-        index = fragment.startchar
-        text = fragment.text
-
-        for t in fragment.matches:
-            if t.startchar > index:
-                self._add_text(text[index:t.startchar], output)
-            output.append((text, t, replace))
-            index = t.endchar
-        if index < len(text):
-            self._add_text(text[index:], output)
-        return self.Stream(output)
-
-    def format(self, fragments, replace=False):
-        output = []
-        first = True
-        for fragment in fragments:
-            if not first:
-                self._add_text(self.between, output)
-            output += self.format_fragment(fragment, replace=replace)
-            first = False
-        return self.Stream(output)
-
-
 # Highlighting
 
 def top_fragments(fragments, count, scorer, order, minscore=1):
