@@ -1,1 +1,0 @@
-# Logistical-Kernel-Density-Estimation
