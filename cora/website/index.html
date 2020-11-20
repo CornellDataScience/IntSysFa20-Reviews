@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180529368-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180529368-1');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Fairmandering is a technique and an organization. We are a nonpartisan group of
+    reformers and technologists from around the country focused on making the redistricting process
+    more fair, efficient, and transparent.">
+
+    <!-- Mailchimp -->
+    <link href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        #mc_embed_signup {
+            background: #fff;
+            clear: left;
+            font: 14px Helvetica, Arial, sans-serif;
+            width: 100%;
+        }
+
+        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/flickity.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <!-- JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> -->
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <title>Fairmandering</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark  bg-dark  py-0" id="landing-nav">
+        <a class="navbar-brand py-1" href="/">
+            <img class="navbar-logo" src="static/images/logo.png" alt="Fairmandering Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <hr class="navbar-break">
+                <a class="nav-item nav-link" href="algorithm.html">Algorithm</a>
+                <hr class="navbar-break">
+                <a class="nav-item nav-link" href="vision.html">Vision</a>
+                <hr class="navbar-break">
+            </div>
+            <div class="navbar-nav ml-auto">
+                <div id="social-nav-links">
+                    <a class="nav-link social" href="https://www.facebook.com/fairmandering"><i
+                            class="fa fa-facebook socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://twitter.com/fairmandering"><i
+                            class="fa fa-twitter socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://www.instagram.com/fairmandering/?hl=en"><i
+                            class="fa fa-instagram socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://www.linkedin.com/company/fairmandering"><i
+                            class="fa fa-linkedin socials nav-socials"></i></a>
+                    <a class="nav-link social" href="mailto:team@fairmandering.org"><i
+                            class="fa fa-envelope socials nav-socials"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER =========================================================== -->
+    <div class="jumbotron d-flex align-items-center" id="banner">
+        <div class="container text-center" id="banner-title">
+            <h1 class="banner-title"><span class="gerryfont" style="font-size: 110%">F</span>AIRMANDERING</h1>
+            <h3 class='ml3'>Fixing democracy one district at a time.</h3>
+            <div class="banner-btns">
+                <button class="banner-btn" onclick="window.location.href='algorithm.html';">Algorithm</button>
+                <button class="banner-btn" onclick="window.location.href='vision.html';">Vision</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERVIEW ========================================================= -->
+
+    <section id='overview'>
+
+        <div class='overview-section black-shadow'>
+
+            <div class="vs-div">
+                <hr class="vs-line slide-l desktop">
+                <h2 class="overview-title vs-txt">GERRYMANDERING</h2>
+                <hr class="vs-line slide-r desktop">
+            </div>
+
+            <div class="content-row desktop">
+                <div class='content-panel red-outline' id='what'>
+                    <h4 class="content-panel-title">What?</h4>
+                    <p>Gerrymandering is the practice of manipulating electoral district lines to secure a lasting
+                        advantage for the majority political party, suppress the power of a social group, or protect
+                        incumbent politicians from competition. In most states, political districts are drawn by the
+                        majority party in the state legislature.
+                    </p>
+                </div>
+                <div class='content-panel blue-outline' id='why'>
+                    <h4 class="content-panel-title">Why?</h4>
+                    <p>Gerrymandering offers a lasting advantage for the majority party by creating a discrepancy
+                        between the number of votes the party receives and the number of seats it ultimately wins in an
+                        election year. The process results in electoral outcomes that are insensitive to swings in
+                        public opinion, meaning that even if the party becomes unpopular, it can still maintain a
+                        political majority. Further, safe incumbents are only threatened by primary challengers from the
+                        political extreme, encouraging polarization between the parties.
+                    </p>
+                </div>
+                <div class='content-panel red-outline' id='how'>
+                    <h4 class="content-panel-title">How?</h4>
+                    <p>State legislatures create gerrymandered districts by using two simple techniques: “packing” and
+                        “cracking.” Packing involves putting as many of your political opponents in as few districts as
+                        possible, resulting in many surplus votes for winning candidates. The rest of the state is
+                        “cracked” by diluting the opposing voters across the remaining districts, limiting their
+                        electoral impact. This results in a few landslide losses for the majority party, but with the
+                        reward of many more competitive races than they would have had otherwise. </p>
+                </div>
+            </div>
+
+            <div class="gallery js-flickity mobile" data-flickity-options='{ "wrapAround": true }'>
+                <div class="gallery-cell">
+                    <h4 class="content-panel-title">What?</h4>
+                    <p>Gerrymandering is the practice of manipulating electoral district lines to secure a lasting
+                        advantage for the majority political party, suppress the power of a social group, or protect
+                        incumbent politicians from competition. In most states, political districts are drawn by the
+                        majority party in the state legislature.
+                    </p>
+                </div>
+                <div class="gallery-cell">
+                    <h4 class="content-panel-title">Why?</h4>
+                    <p>Gerrymandering offers a lasting advantage for the majority party by creating a discrepancy
+                        between the number of votes the party receives and the number of seats it ultimately wins in an
+                        election year. The process results in electoral outcomes that are insensitive to swings in
+                        public opinion, meaning that even if the party becomes unpopular, it can still maintain a
+                        political majority. Further, safe incumbents are only threatened by primary challengers from the
+                        political extreme, encouraging polarization between the parties.
+                    </p>
+                </div>
+                <div class="gallery-cell">
+                    <h4 class="content-panel-title">How?</h4>
+                    <p>State legislatures create gerrymandered districts by using two simple techniques: “packing” and
+                        “cracking.” Packing involves putting as many of your political opponents in as few districts as
+                        possible, resulting in many surplus votes for winning candidates. The rest of the state is
+                        “cracked” by diluting the opposing voters across the remaining districts, limiting their
+                        electoral impact. This results in a few landslide losses for the majority party, but with the
+                        reward of many more competitive races than they would have had otherwise.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='overview-section black-shadow'>
+
+            <div class="vs-div">
+                <hr class="vs-line slide-l desktop">
+                <h2 class="overview-title vs-txt">FAIRMANDERING</h2>
+                <hr class="vs-line slide-r desktop">
+            </div>
+
+            <div class="content-row desktop">
+                <div class='content-panel blue-outline' id='fair-what'>
+                    <h4 class="content-panel-title">What?</h4>
+                    <p>Fairmandering is the process of explicitly creating district maps with fair outcomes --
+                        those that accurately reflect a state's political leanings, create enough competitive races
+                        to ensure accountability, and treat each party symmetrically.
+                    </p>
+                </div>
+                <div class='content-panel red-outline' id='fair-why'>
+                    <h4 class="content-panel-title">Why?</h4>
+                    <p>Fairmandering is neccessary because maps drawn by humans are almost always biased, and even
+                        randomly generated compact maps produced by computers are rarely fair. It is critical to be
+                        intentional and transparent about what we choose to optimize for when creating maps that elect
+                        our politicans for the next decade.
+                    </p>
+                </div>
+                <div class='content-panel blue-outline' id='fair-how'>
+                    <h4 class="content-panel-title">How?</h4>
+                    <p>Fairmandering is made possible by a recent breakthough in redistricting technology. The basic
+                        idea is to repeatedly break up a state into smaller regions such that the pieces can fit
+                        together in an exponential number of ways. It is then efficient to filter out the thousands of
+                        fair
+                        maps from the trillions we create.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery js-flickity mobile" data-flickity-options='{ "wrapAround": true }'>
+                <div class="gallery-cell">
+                    <h4 class="content-panel-title">What?</h4>
+                    <p>Fairmandering is the process of explicitly creating district maps with fair outcomes --
+                        those that accurately reflect a state's political leanings, create enough competitive races
+                        to ensure accountability, and treat each party symmetrically.
+                    </p>
+                </div>
+                <div class="gallery-cell">
+                    <h4 class="content-panel-title">Why?</h4>
+                    <p>Fairmandering is neccessary because maps drawn by humans are almost always biased, and even
+                        randomly generated compact maps produced by computers are rarely fair. It is critical to be
+                        intentional and transparent about what we choose to optimize for when creating maps that elect
+                        our politicans for the next decade.
+                    </p>
+                </div>
+                <div class="gallery-cell">
+                    <h4 class="content-panel-title">How?</h4>
+                    <p>Fairmandering is made possible by a recent breakthough in redistricting technology. The basic
+                        idea is to repeatedly break up a state into smaller regions such that the pieces can fit
+                        together in an exponential number of ways. It is then efficient to filter out the thousands of
+                        fair
+                        maps from the trillions we create.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="about-us">
+        <div id="about-panel" class="overview-section black-shadow">
+            <hr class="vs-line slide-l desktop">
+            <h2 class="overview-title vs-txt">ABOUT US</h2>
+            <hr class="vs-line slide-r desktop">
+            <div class='about-content'>
+                <img class='about-img desktop' src="static/images/logo.png" alt="logo">
+                <p class='about-txt'>Fairmandering is a technique and an organization. We are a nonpartisan group of
+                    reformers and technologists from around the country focused on making the redistricting process
+                    more fair, efficient, and transparent. We do original technical research and build
+                    quantitative tools to help citizens and independent commissions draw more representative maps.</p>
+                <img class='about-img mobile' src="static/images/logo.png" alt="logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="next-steps">
+
+        <div class="next-steps-popup black-shadow">
+            <div class="vs-div">
+                <hr class="vs-line slide-l desktop">
+                <h2 class="overview-title vs-txt">WE NEED YOUR HELP</h2>
+                <hr class="vs-line slide-r desktop">
+            </div>
+            <div class="sb sb-left">
+                <span class="number-circle">1</span>
+                <h3 class="ns-title"> <span class="gerryfont ns-gerry">C</span>ontact your representatives </h3>
+                <button class="ns-btn" onclick="window.open('https://myreps.datamade.us/','_blank')">
+                    <p class="ns-btn-txt">Find Your Reps </p><i class="fa fa-search ns-icon"></i>
+                </button>
+            </div>
+            <div class="sb sb-right">
+                <span class="number-circle">2</span>
+                <h3 class="ns-title"> <span class="ns-gerry gerryfont">F</span>ollow us on social media </h3>
+                <div class="icons-row">
+                    <a href="https://twitter.com/fairmandering" target="_blank"><i
+                            class="fa fa-twitter ns-socials"></i></a>
+                    <a href="https://www.facebook.com/fairmandering" target="_blank"><i
+                            class="fa fa-facebook ns-socials"></i></a>
+                    <a href="https://www.instagram.com/fairmandering/?hl=en" target="_blank"><i
+                            class="fa fa-instagram ns-socials"></i></a>
+                    <a href="https://www.linkedin.com/company/fairmandering/" target="_blank"><i
+                            class="fa fa-linkedin ns-socials"></i></a>
+                </div>
+            </div>
+            <div class="sb sb-left">
+                <span class="number-circle">3</span>
+                <h3 class="ns-title"> <span class="gerryfont ns-gerry">S</span>ign up for our mailing list </h3>
+
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://fairmandering.us2.list-manage.com/subscribe/post?u=09a7cc465eaf59ea587adeef4&amp;id=38d2f75508"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <!-- <label for="mce-EMAIL">Get email updates</label> -->
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                                placeholder="email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                    name="b_09a7cc465eaf59ea587adeef4_38d2f75508" tabindex="-1" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe"
+                                    id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="sb sb-right">
+                <span class="number-circle">4</span>
+                <h3 class="ns-title"> <span class="gerryfont ns-gerry">D</span>onate to our PayPal </h3>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="77L973T59SGT6" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
+                        name="submit" title="PayPal - The safer, easier way to pay online!"
+                        alt="Donate with PayPal button" />
+                    <img alt="paypal logo" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
+                        height="1" />
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a href="mailto:team@fairmandering.org" target="_blank"><i class="fa fa-envelope socials"></i></a>
+        <a href="https://twitter.com/fairmandering" target="_blank"><i class="fa fa-twitter socials"></i></a>
+        <a href="https://www.instagram.com/fairmandering/?hl=en" target="_blank"><i
+                class="fa fa-instagram socials"></i></a>
+        <a href="https://www.linkedin.com/company/fairmandering/about" target="_blank"><i
+                class="fa fa-linkedin socials"></i></a>
+        <a href="https://www.facebook.com/fairmandering" target="_blank"><i class="fa fa-facebook socials"></i></a>
+        <p class="copyright">Website &copy; 2020
+            <script>new Date().getFullYear() > 2020 && document.write("-" + new Date().getFullYear());</script>
+            Fairmandering</p>
+    </footer>
+
+</body>
+
+<script src="static/js/flickity.pkgd.min.js"></script>
+<script>
+    (function ($) {
+
+        /**
+         * Copyright 2012, Digital Fusion
+         * Licensed under the MIT license.
+         * http://teamdf.com/jquery-plugins/license/
+         *
+         * @author Sam Sehnert
+         * @desc A small plugin that checks whether elements are within
+         *     the user visible viewport of a web browser.
+         *     only accounts for vertical position, not horizontal.
+         */
+
+        $.fn.visible = function (partial) {
+
+            var $t = $(this),
+                $w = $(window),
+                viewTop = $w.scrollTop(),
+                viewBottom = viewTop + $w.height(),
+                _top = $t.offset().top,
+                _bottom = _top + $t.height(),
+                compareTop = partial === true ? _bottom : _top,
+                compareBottom = partial === true ? _top : _bottom;
+
+            return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+        };
+
+    })(jQuery);
+
+    if (screen.width < 768) {
+        $(".desktop").hide();
+    } else {
+        $(".mobile").hide();
+    }
+
+    function dropMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    $(window).scroll(function (event) {
+
+        $(".content-panel").each(function (i, el) {
+            var el = $(el);
+            if (el.visible(true)) {
+                el.addClass("come-in");
+            }
+        });
+
+        $(".next-steps-popup, .overview-section").each(function (i, el) {
+            var el = $(el);
+            if (el.visible(true)) {
+                el.addClass("come-in-steps");
+            }
+        });
+
+        $(".slide-r").each(function (i, el) {
+            var el = $(el);
+            if (el.visible(true)) {
+                el.addClass("slide-right");
+            }
+        });
+
+        $(".slide-l").each(function (i, el) {
+            var el = $(el);
+            if (el.visible(true)) {
+                el.addClass("slide-left");
+            }
+        });
+
+    });
+
+    var textWrapper = document.querySelector('.ml3');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: false })
+        .add({
+            targets: '.ml3 .letter',
+            opacity: [0, 1],
+            easing: "easeInOutQuad",
+            duration: 1000,
+            delay: (el, i) => 50 * (i + 1)
+        });
+</script>
+<script src="https://use.fontawesome.com/d92542f553.js"></script>

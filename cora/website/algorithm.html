@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180529368-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180529368-1');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The 'How it Works' behind Fairmandering's algorithm.">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <title>Algorithm</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark  bg-dark  py-0" id="landing-nav">
+        <a class="navbar-brand py-1" href="/">
+            <img class="navbar-logo" src="static/images/logo.png" alt="Fairmandering Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <hr class="navbar-break">
+                <a class="nav-item nav-link" href="algorithm.html">Algorithm</a>
+                <hr class="navbar-break">
+                <a class="nav-item nav-link" href="vision.html">Vision</a>
+                <hr class="navbar-break">
+            </div>
+            <div class="navbar-nav ml-auto">
+                <div id="social-nav-links">
+                    <a class="nav-link social" href="https://www.facebook.com/fairmandering"><i
+                            class="fa fa-facebook socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://twitter.com/fairmandering"><i
+                            class="fa fa-twitter socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://www.instagram.com/fairmandering/?hl=en"><i
+                            class="fa fa-instagram socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://www.linkedin.com/company/fairmandering"><i
+                            class="fa fa-linkedin socials nav-socials"></i></a>
+                    <a class="nav-link social" href="mailto:team@fairmandering.org"><i
+                            class="fa fa-envelope socials nav-socials"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="article-title">How it Works</h1>
+
+    <main>
+        <section id="main">
+            <div id="puzzle" class="case active">
+
+                <div class="buttons">
+                    <p class="prev-grey btn mobile"><i class="fa fa-angle-left"></i></p>
+                    <p class="prev-grey btn desktop"><i class="fa fa-angle-left"></i> prev</p>
+                    <h2>Part 1/3: Imagine a Puzzle</h2>
+                    <p class="next btn mobile"> <i class="fa fa-angle-right"></i></p>
+                    <p class="next btn desktop">next <i class="fa fa-angle-right"></i></p>
+                </div>
+
+                <p><span class="drop-cap">T</span>he simplest optimization algorithm is brute force: create a very large
+                    number of legal maps and then
+                    just pick the best one! That might not sound like a novel idea, but we can leverage the structure of
+                    the redistricting problem to create a HUGE number of maps in not all that much time.</p>
+                <p>To give you the intuition, imagine a puzzle. Each piece of this puzzle is shaped so that it fits
+                    precisely together with the other pieces to create a clean rectangle.</p>
+                <div class="img-centering">
+                    <img class="algo-img small-puzzle-img" src="static/images/algorithm/puzzle.png"
+                        alt="A four piece puzzle">
+                </div>
+                <p>Consider what happens when we cut each piece into smaller sub-pieces:</p>
+                <div class="img-centering">
+                    <img class="algo-img big-puzzle-img" src="static/images/algorithm/puzzle_piece_enumeration.png"
+                        alt="Enumeration of piece division">
+                </div>
+                <p>Any division of a given piece is compatible with any division of the other pieces, because each
+                    division adds up to a correctly shaped puzzle piece, and the puzzle pieces add up to a correctly
+                    shaped puzzle!
+                </p>
+                <div class="img-centering">
+                    <img class="algo-img small-puzzle-img" src="static/images/algorithm/puzzle_partition.png"
+                        alt="A four piece puzzle partitioned into sub-pieces">
+                </div>
+                <p>In creating only 16 puzzle piece divisions, we create 256 possible ways to assemble the puzzle
+                    (4<sup>4</sup>). If we sliced up each of the sub-puzzle pieces into sub-sub-pieces, the
+                    exponentiation compounds and we get 4<sup>4<sup>4</sup></sup> (over 4 <i>billion</i>) distinct ways
+                    to construct the puzzle.</p>
+
+                <div class="buttons">
+                    <p class="prev-grey btn"><i class="fa fa-angle-left"></i> prev</p>
+                    <p class="next btn">next <i class="fa fa-angle-right"></i></p>
+                </div>
+            </div>
+
+            <div id="generation" class="case">
+
+                <div class="buttons">
+                    <p class="prev btn mobile"><i class="fa fa-angle-left"></i></p>
+                    <p class="prev btn desktop"><i class="fa fa-angle-left"></i> prev</p>
+                    <h2>Part 2/3: Creating Districts</h2>
+                    <p class="next btn mobile"> <i class="fa fa-angle-right"></i></p>
+                    <p class="next btn desktop">next <i class="fa fa-angle-right"></i></p>
+                </div>
+
+                <p><span class="drop-cap">N</span>ow imagine instead of splitting pieces of a puzzle, we split pieces of
+                    a state.</p>
+                <div class="img-centering">
+                    <img class="algo-img" src="static/images/algorithm/sample_tree.png"
+                        alt="A sample tree of district divisions">
+                </div>
+                <p>We create a tree of random partitions that achieves exponentiation just like the puzzle! The leaves
+                    of
+                    the tree are legal districts that we can compose into a HUGE number of distinct plans.</p>
+                <div class="img-centering">
+                    <img class="algo-img" src="static/images/algorithm/enumeration.gif" alt="Sample tree enumeration">
+                </div>
+                <p>Depending on the size of the state, on a full size tree playing at 20 frames per second like above,
+                    it
+                    could take the age of the universe to watch the full enumeration.</p>
+                <p>The problem then becomes how do we actually go about splitting a state into smaller pieces to
+                    eventually
+                    make legal (i.e. contiguous and population balanced) districts?</p>
+                <p>We do this by randomly selecting region “seeds” which act like the center of a region. With each
+                    seed, we
+                    also sample the region size, the number of districts that the region ultimately contains. For
+                    example,
+                    the 3 in the figure below indicates that region should have population sufficient for 3 districts.
+                </p>
+                <div class="img-centering">
+                    <img class="algo-img" src="static/images/algorithm/center_selection.png"
+                        alt="Region center selection">
+                </div>
+                <p>With these seeds and sizes, we split a region into contiguous and correctly sized regions using an
+                    optimization technique called
+                    <a href="https://en.wikipedia.org/wiki/Integer_programming" target="_blank">integer programming</a>.
+                </p>
+                <div class="img-centering">
+                    <img class="algo-img" src="static/images/algorithm/partition.png" alt="Region partition">
+                </div>
+                <p>We keep doing this until the size is equal to 1, as a region with size equal to 1 is a legal
+                    district!
+                </p>
+                <div class="img-centering">
+                    <img class="algo-img" src="static/images/algorithm/generation_animation.gif"
+                        alt="Generation animation">
+                </div>
+
+                <div class="buttons">
+                    <p class="prev btn"><i class="fa fa-angle-left"></i> prev</p>
+                    <p class="next btn">next <i class="fa fa-angle-right"></i></p>
+                </div>
+            </div>
+
+            <div id="selection" class="case">
+
+                <div class="buttons">
+                    <p class="prev btn mobile"><i class="fa fa-angle-left"></i></p>
+                    <p class="prev btn desktop"><i class="fa fa-angle-left"></i> prev</p>
+                    <h2>Part 3/3: Selecting a Map</h2>
+                    <p class="next-grey btn mobile"> <i class="fa fa-angle-right"></i></p>
+                    <p class="next-grey btn desktop">next <i class="fa fa-angle-right"></i></p>
+                </div>
+
+                <p><span class="drop-cap">U</span>sing past statewide election data from a number of years and offices,
+                    we can estimate
+                    the probability that an arbitrary congressional district will be occupied by a Democrat or
+                    a Republican.</p>
+                <div class="img-centering">
+                    <img class="algo-img" src="static/images/algorithm/district_probability.png"
+                        alt="Probability of Republican district">
+                </div>
+                <p>Therefore we can estimate what the likely outcome is for every district we generate, and consequently
+                    every plan we implicitly generate. Using these estimates we can calculate the expected <a
+                        href="https://ballotpedia.org/Efficiency_gap" , target="_blank">efficiency gap</a>, a popular
+                    fairness metric that calculated the difference in the number of wasted votes.</p>
+                <p>Because we implicitly generate a huge number of combinations, we can’t actually just score every map
+                    and
+                    pick the best one. To get around this we solve an additional optimization problem (more integer
+                    programming) to find a diverse set of fair maps. This makes it relatively fast (a few minutes or
+                    hours)
+                    to filter thousands of fair maps from the trillions (or quintillions or more) that we generate. With
+                    this set of fair maps, we can further filter on secondary criteria like competitiveness or
+                    compactness
+                    to pick the final map.</p>
+                <div class="img-centering">
+                    <img class="algo-img" src="static/images/algorithm/filter_plans.png"
+                        alt="Good and bad district plans">
+                </div>
+                <p>To summarize, we generate a huge number of maps to maximize the probability that one of them is
+                    really good. We go through a first filtering step to go from trillions of random maps to thousands
+                    of fair maps. Then we do a second filtering step to go from thousands of fair maps to tens or
+                    hundreds of fair maps that are compact and competitive, while also satisfying the other criteria
+                    from a state’s redistricting laws.</p>
+                <div class="buttons">
+                    <p class="prev btn"><i class="fa fa-angle-left"></i> prev</p>
+                    <p class="next-grey btn">next <i class="fa fa-angle-right"></i></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="mailto:team@fairmandering.org" target="_blank"><i class="fa fa-envelope socials"></i></a>
+        <a href="https://twitter.com/fairmandering" target="_blank"><i class="fa fa-twitter socials"></i></a>
+        <a href="https://www.instagram.com/fairmandering/?hl=en" target="_blank"><i
+                class="fa fa-instagram socials"></i></a>
+        <a href="https://www.linkedin.com/company/fairmandering/about" target="_blank"><i
+                class="fa fa-linkedin socials"></i></a>
+        <a href="https://www.facebook.com/fairmandering" target="_blank"><i class="fa fa-facebook socials"></i></a>
+        <p class="copyright">Website &copy; 2020
+            <script>new Date().getFullYear() > 2020 && document.write("-" + new Date().getFullYear());</script>
+            Fairmandering</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('.next').click(function () {
+                if ($('.active').next('.case').length) {
+                    $('.active').removeClass('active')
+                        .next('.case')
+                        .addClass('active');
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                }
+            });
+            $('.prev').click(function () {
+                if ($('.active').prev('.case').length) {
+                    $('.active').removeClass('active')
+                        .prev('.case')
+                        .addClass('active');
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                }
+            });
+        });
+
+        function dropMenu() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        if (screen.width < 768) {
+            $(".desktop").hide();
+        } else {
+            $(".mobile").hide();
+        }
+
+    </script>
+</body>

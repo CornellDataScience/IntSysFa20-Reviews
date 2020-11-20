@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>SVG Generation</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div id="state-div" class="state-div">
+    <h3 class="state-label">State</h3>
+    <svg id="example_state" width="600" height="600"></svg>
+  </div>
+
+  <div class="reps-div">
+    <h4>Representatives</h4>
+    <i id="rep1" class="fa fa-user fa-7x"></i>
+    <i id="rep2" class="fa fa-user fa-7x"></i>
+    <i id="rep3" class="fa fa-user fa-7x"></i>
+  </div>
+</body>
+
+<script>
+  // Change steps and uncomment code at the bottom to download svg
+  var steps = 2;
+
+  let svg = d3.select("svg#example_state");
+  let divWidth = d3.select("div#state-div").node().getBoundingClientRect().width;
+  width = divWidth;
+  height = divWidth;
+  console.log(width)
+  const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+  chartWidth = width - margin.left - margin.right;
+  chartHeight = height - margin.top - margin.bottom;
+
+  var arr = [];
+  var n = 0;
+  for (var r = 0; r < 9; r++) {
+    for (var c = 0; c < 9; c++) {
+      var obj = new Object();
+      obj.r = r;
+      obj.c = c;
+      obj.p = c >= 6 ? "yellow" : "orange";
+      arr.push(obj);
+      n += 1
+    }
+  }
+
+  var orange = "#ffa21f"
+  var yellow = "#fff75c"
+
+  let circlePosScale = d3.scaleLinear()
+    .domain([0, 9])
+    .range([margin.top, chartWidth + margin.top]);
+
+  showCircles(50);
+
+  function showCircles(luminosity) {
+    let circles = svg.selectAll("circle").data(arr)
+      .join("circle")
+      .attr("cx", d => margin.left + circlePosScale(d.c))
+      .attr("cy", d => circlePosScale(d.r) - margin.top)
+      .attr("r", "10")
+      .style("fill", d => d.p == "orange" ? orange : yellow)
+      .attr("opacity", 0.8);
+  }
+
+  if (steps == 1) {
+    d3.selectAll("rect").remove();
+    [0, 1, 2].forEach(async function (n) {
+      svg.append("rect")
+        .attr("x", margin.left)
+        .attr("y", (chartHeight / 3) * n - margin.top)
+        .attr("rx", 20)
+        .attr("width", chartWidth)
+        .attr("height", chartHeight / 3)
+        .style("fill-opacity", 0)
+        .style("stroke", "black")
+        .style("stroke-width", 3);
+    })
+  }
+  else if (steps == 2) {
+    d3.selectAll("rect").remove();
+    [0, 1, 2].forEach(async function (n) {
+      svg.append("rect")
+        .attr("x", (chartWidth / 3) * n + margin.left)
+        .attr("y", -1 * margin.top)
+        .attr("rx", 20)
+        .attr("width", chartWidth / 3)
+        .attr("height", chartHeight)
+        .style("fill-opacity", 0)
+        .style("stroke", "black")
+        .style("stroke-width", 3);
+    })
+  }
+
+// UNCOMMENT THE BLOCK BELOW FOR FILE DOWNLOAD 
+// (CHANGE downloadLink.download TO CHANGE FILE NAME)
+  // var svgData = $("#example_state")[0].outerHTML;
+  // var svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+  // var svgUrl = URL.createObjectURL(svgBlob);
+  // var downloadLink = document.createElement("a");
+  // downloadLink.href = svgUrl;
+  // downloadLink.download = "state2.svg";
+  // document.body.appendChild(downloadLink);
+  // downloadLink.click();
+  // document.body.removeChild(downloadLink);
+</script>
+
+</html>

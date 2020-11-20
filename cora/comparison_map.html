@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swipe between maps</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    body * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css" />
+  <div id="comparison-container">
+    <div id="before" class="map"></div>
+    <div id="after" class="map"></div>
+  </div>
+  <script>
+    // TO MAKE THE MAP APPEAR YOU MUST
+    // ADD YOUR ACCESS TOKEN FROM
+    // https://account.mapbox.com
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZm9yYWdlciIsImEiOiJjazVlNTV6ZmwxemwwM2twbzVocWljZjR1In0.g7pCpemtWzpHN6WEXMnFUw';
+
+    const electoralColors = d3.scaleLinear([0.0, 0.5, 1.0], ["#d63636", "#ededed", "#0e4ab3"])
+      .clamp(true)
+      .interpolate(d3.interpolateHcl);
+
+    var beforeMap = new mapboxgl.Map({
+      container: 'before',
+      style: 'mapbox://styles/forager/ck5e8bzry0fkd1iqmofttjes4',
+      center: [-80, 35.2],
+      maxBounds: [
+        [-86, 33],
+        [-74, 37]
+      ]
+    });
+
+    beforeMap.on('load', function () {
+      beforeMap.addSource("good-districts", {
+        type: "geojson",
+        data: "nc_fair_compact.geojson",
+        generateId: false
+      });
+      beforeMap.addLayer({
+        'id': 'good-district-borders',
+        'type': 'line',
+        "source": "good-districts",
+        'paint': {
+          'line-color': '#646464',
+          'line-width': 2,
+          'line-opacity': 1
+        }
+      });
+
+      beforeMap.addLayer({
+        "id": "good-district-color",
+        "type": "fill",
+        "source": "good-districts",
+        "paint": {
+          'fill-color': [
+            'interpolate',
+            ['linear'],
+            ['get', 'color'],
+            0, '#175de8',
+            .5, '#ededed',
+            1, '#ed2d1f'
+          ]
+        },
+      },
+        'waterway-label'
+      );
+    });
+
+    var afterMap = new mapboxgl.Map({
+      container: 'after',
+      style: 'mapbox://styles/forager/ck5e8bzry0fkd1iqmofttjes4',
+      center: [-80, 35.2],
+      maxBounds: [
+        [-86, 33],
+        [-74, 37]
+      ]
+    });
+
+    afterMap.on('load', function () {
+
+      afterMap.addSource("districts", {
+        type: "geojson",
+        data: "nc12.geojson",
+        generateId: false
+      });
+      afterMap.addLayer({
+        'id': 'district-borders',
+        'type': 'line',
+        "source": "districts",
+        'paint': {
+          'line-color': '#646464',
+          'line-width': 2,
+          'line-opacity': 1
+        }
+      });
+      afterMap.addLayer({
+        "id": "district-color",
+        "type": "fill",
+        "source": "districts",
+        "paint": {
+          'fill-color': [
+            'interpolate',
+            ['linear'],
+            ['get', 'politics'],
+            0, '#175de8',
+            .5, '#ededed',
+            1, '#ed2d1f'
+          ]
+        },
+      },
+        'waterway-label'
+      );
+
+
+    });
+
+    // A selector or reference to HTML element
+    var container = '#comparison-container';
+
+    var map = new mapboxgl.Compare(beforeMap, afterMap, container, {
+      // Set this to enable comparing two maps by mouse movement:
+      // mousemove: true
+    });
+  </script>
+
+</body>
+
+</html>
