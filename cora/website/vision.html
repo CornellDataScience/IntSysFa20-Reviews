@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180529368-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180529368-1');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/flickity.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <title>Vision</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark  bg-dark  py-0" id="landing-nav">
+        <a class="navbar-brand py-1" href="/">
+            <img class="navbar-logo" src="static/images/logo.png" alt="Fairmandering Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <hr class="navbar-break">
+                <a class="nav-item nav-link" href="algorithm.html">Algorithm</a>
+                <hr class="navbar-break">
+                <a class="nav-item nav-link" href="vision.html">Vision</a>
+                <hr class="navbar-break">
+            </div>
+            <div class="navbar-nav ml-auto">
+                <div id="social-nav-links">
+                    <a class="nav-link social" href="https://www.facebook.com/fairmandering"><i
+                            class="fa fa-facebook socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://twitter.com/fairmandering"><i
+                            class="fa fa-twitter socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://www.instagram.com/fairmandering/?hl=en"><i
+                            class="fa fa-instagram socials nav-socials"></i></a>
+                    <a class="nav-link social" href="https://www.linkedin.com/company/fairmandering"><i
+                            class="fa fa-linkedin socials nav-socials"></i></a>
+                    <a class="nav-link social" href="mailto:team@fairmandering.org"><i
+                            class="fa fa-envelope socials nav-socials"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="article-title">Our Vision</h1>
+        <section id="main">
+            <p><span class="drop-cap">W</span>e, and many other reformers, advocate for transferring the drawing power
+                from politicians to independent commissions. However, drawing maps that satisfy the legal requirements
+                is difficult, time consuming, expensive, and prone to bias when people do it, even if they are part of
+                an independent commission. Because of this, we envision an improved process following the 2020 Census
+                that starts with an algorithm like ours generating a series of high quality maps, which would then form
+                the basis of the independent commission’s decision.</p>
+            <p>We propose that the first step of the process starts with using our <a href="algorithm.html">SHP
+                    algorithm</a> (or similar), where we generate on the order of trillions of legal
+                district maps. The second step is to filter these trillions of maps down to the thousands that are fair.
+            </p>
+            <p>Our definition of fairness relies on minimizing the expected efficiency gap. The <a
+                    href="https://ballotpedia.org/Efficiency_gap" , target="_blank">efficiency gap</a> is a measure of
+                wasted votes between two parties: votes cast for the losing candidate, and surplus votes cast for the
+                winning candidate over what they needed to win. Using past electoral data, we can estimate how a
+                district will vote in congressional elections for an arbitrary candidate, and can therefore estimate for
+                a particular plan the likely electoral outcome and the resulting partisan balance.</p>
+            <p>The second step is to filter the thousands of fair maps to tens or hundreds of fair maps that are also
+                compact, competitive, preserve existing political boundaries, have enough majority-minority districts,
+                and fulfil any further criteria the commission may have. If the commission's criteria is too strict,
+                there may be no such map and they would need to relax their constraints and choose only the most
+                important criteria.</p>
+            <p>The last step isn’t so much a step, but a back and forth between commissions, citizens, and quantitative
+                researchers (such as ourselves) to settle on the final district plan. Compromise is inevitable, as there
+                is no such thing as a perfect map. The key is transparency and awareness, so both citizens and
+                independent commissioners can make informed decisions.</p>
+            <p>Beyond redistricting, there are a number of other basic reforms that we believe would improve our
+                democratic process. The first is a <a href="https://www.youtube.com/watch?v=7u1pngPwGd8"
+                    target="_blank">final 5 open primary system</a>, where all candidates, regardless of party, run in a
+                common primary, and the top 5 finishers move on to the general election. This would reduce the
+                temptation for political candidates to run more extreme campaigns to appease the very narrow primary
+                electorate in their party. The second is implementing <a
+                    href="https://ballotpedia.org/Ranked-choice_voting_(RCV)" _blank"">ranked choice voting</a>
+                for general elections, where voters rank the candidates by preference, enabling them to worry less about
+                who is most “electable” and instead on who they most want to win. The third is to provide additional
+                financial support for all candidates, reducing the role of money in elections. In combination with
+                redistricting reform, we believe these improvements to the political process will usher in a new era of
+                citizen empowerment.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="mailto:team@fairmandering.org" target="_blank"><i class="fa fa-envelope socials"></i></a>
+        <a href="https://twitter.com/fairmandering" target="_blank"><i class="fa fa-twitter socials"></i></a>
+        <a href="https://www.instagram.com/fairmandering/?hl=en" target="_blank"><i
+                class="fa fa-instagram socials"></i></a>
+        <a href="https://www.linkedin.com/company/fairmandering/about" target="_blank"><i
+                class="fa fa-linkedin socials"></i></a>
+        <a href="https://www.facebook.com/fairmandering" target="_blank"><i class="fa fa-facebook socials"></i></a>
+        <p class="copyright">Website &copy; 2020
+            <script>new Date().getFullYear() > 2020 && document.write("-" + new Date().getFullYear());</script>
+            Fairmandering</p>
+    </footer>
+</body>
