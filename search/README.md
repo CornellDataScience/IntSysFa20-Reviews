@@ -1,0 +1,1 @@
+For context, `simstring.py` is a file that was used as the primary concept matcher for the MCI search module. There is also the highlighter module that is part of our new search system to allow for bold sections to be shown in the results
